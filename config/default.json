@@ -1,0 +1,28 @@
+{
+  
+  "bot": {
+      "token":"NjE1NjU1NTg4MzI3NTg3OTAz.XWRL8g.NWrK-AqMXKD0qibeB3DUj2eZ-vA",
+      "prefix": "!",
+      "debug": true
+  },
+  "mynt": {
+    "paytxfee": ".01",
+    "config": {
+      "port": 23506,
+      "user": "logaut",
+      "pass": "logautpass"
+    }
+  },
+  
+  "moderation":{
+  "pm2Name": "Mynt-TipBot",
+   
+  "perms": ["Admin","Moderator","Community Leader","Bots"],
+ 
+  "botDev": "DreadedZombie",
+  
+  "logchannel": "575569258046554112",
+
+  "botspamchannels": ["575569198768586752"]
+  }
+}

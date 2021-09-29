@@ -1,0 +1,28 @@
+{
+ 
+  "bot": {
+      "token":"NzIwNDIxMDY4MjUwMDIxODg4.XuFuZw.ROm4HSURN36Vm0yxd7Gk2TEWWs0",
+      "prefix": "!",
+      "debug": true
+  },
+  "mynt": {
+    "paytxfee": ".01",
+    "config": {
+      "port": 23505,
+      "user": "myntrpcuser",
+      "pass": "myntrpcpass-do-not-use"
+    }
+  },
+  
+  "moderation":{
+  "pm2Name": "Mynt-TipBot",
+   
+  "perms": ["Admin","Moderator","Community Leader","Bots"],
+ 
+  "botDev": "Logaut",
+  
+  "logchannel": "614603785578479658",
+  
+  "botspamchannels": ["614603785578479658"]
+  }
+}

@@ -1,0 +1,17 @@
+{
+
+  "prefix": "-",
+  "color": "#71368a",
+  "ban": "BAN_MEMBERS",
+  "kick": "KICK_MEMBERS",
+  "mute": "MUTE_MEMBERS",
+  "unmute": "MUTE_MEMBERS",
+  "say": "MANAGE_MESSAGES",
+    "uspjesno": "✅",
+  "pogreska": "❌",
+  "devs": [
+    "578933981060399135"
+  ],
+  "clientid": "833008485825773628",
+  "clientsecret":"1v6ZkDYr1oxgqPFO5dW_kJdwPNg2D5wK"
+}

@@ -1,0 +1,64 @@
+
+const { CanvasRenderService } = require('chartjs-node-canvas')
+const { MessageAttachment } = require('discord.js')
+const dotenv = require('dotenv');
+const axios = require('axios'); 
+const data = require('../chart-data.json')
+
+const members = []
+const dates = []
+
+for (const item of data) {
+  members.push(item.members)
+ dates.push(item.date)
+}
+
+const width = 800
+const height = 600
+
+const chartCallback = (ChartJS) => {
+  ChartJS.plugins.register({
+    beforeDraw: (chartInstance) => {
+      const { chart } = chartInstance
+      const { ctx } = chart
+      ctx.fillStyle = 'white'
+      ctx.fillRect(0, 0, chart.width, chart.height)
+    },
+  })
+}
+
+module.exports.run = async (bot, message, args) => {
+  const { data } = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/bitcoin/market_chart?vs_currency=usd&days=1`
+        );
+
+  let majko = data.prices
+  let karina = majko.toString()
+  let cuna = karina.split(",")[0] 
+console.log(karina)
+    const canvas = new CanvasRenderService(width, height, chartCallback)
+
+    const configuration = {
+      type: 'bar',
+      data: {
+        labels: dates,
+        datasets: [
+          {
+            label: 'Discord Members',
+            data: members,
+            backgroundColor: '#7289d9',
+          },
+        ],
+      },
+    }
+
+    const image = await canvas.renderToBuffer(configuration)
+
+    const attachment = new MessageAttachment(image)
+
+    message.channel.send(attachment)
+  
+}
+module.exports.help = {
+  name:"karina"
+}
